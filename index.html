@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dental Health Care Camp - Shivam kumar</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#eef7fb;
+    color:#17324d;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(135deg,#006d77,#0096a6);
+    color:white;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 3px 15px rgba(0,0,0,0.15);
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#b8f2ff;
+}
+
+header small{
+    font-size:13px;
+}
+
+/* MAIN */
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:30px auto;
+}
+
+/* PAGE */
+.page{
+    display:none;
+    animation:fadeIn .4s ease;
+}
+
+.page.active{
+    display:block;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* HERO */
+.hero{
+    background:linear-gradient(135deg,#005f73,#0a9396);
+    color:white;
+    border-radius:25px;
+    padding:55px;
+    min-height:390px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+    box-shadow:0 10px 30px rgba(0,100,110,.2);
+}
+
+.hero-text{
+    max-width:650px;
+}
+
+.hero h1{
+    font-size:45px;
+    margin-bottom:18px;
+}
+
+.hero p{
+    font-size:19px;
+    line-height:1.6;
+    margin-bottom:25px;
+}
+
+.hero-icon{
+    font-size:150px;
+}
+
+/* BUTTONS */
+.btn{
+    border:none;
+    padding:13px 24px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.btn-primary{
+    background:#ffb703;
+    color:#17324d;
+}
+
+.btn-secondary{
+    background:white;
+    color:#006d77;
+}
+
+.btn-blue{
+    background:#0077b6;
+    color:white;
+}
+
+.btn-green{
+    background:#2a9d8f;
+    color:white;
+}
+
+.btn-red{
+    background:#e63946;
+    color:white;
+}
+
+/* SECTION TITLE */
+.section-title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.section-title h2{
+    font-size:32px;
+    color:#006d77;
+    margin-bottom:8px;
+}
+
+.section-title p{
+    color:#607d8b;
+}
+
+/* CARDS */
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.card h3{
+    color:#006d77;
+    margin-bottom:10px;
+}
+
+.icon{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+/* STATS */
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:18px;
+    margin:30px 0;
+}
+
+.stat{
+    background:white;
+    padding:25px;
+    text-align:center;
+    border-radius:18px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
+.stat h2{
+    color:#0096a6;
+    font-size:32px;
+}
+
+/* FORM */
+.form-box{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group.full{
+    grid-column:1/-1;
+}
+
+label{
+    display:block;
+    margin-bottom:7px;
+    font-weight:bold;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:13px;
+    border:1px solid #cbdde5;
+    border-radius:9px;
+    font-size:15px;
+    outline:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#0096a6;
+}
+
+textarea{
+    min-height:110px;
+    resize:vertical;
+}
+
+/* DOCTORS */
+.doctor{
+    text-align:center;
+}
+
+.doctor-photo{
+    width:100px;
+    height:100px;
+    margin:auto;
+    border-radius:50%;
+    background:#d9f3f5;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.doctor .speciality{
+    color:#008c95;
+    font-weight:bold;
+    margin:8px 0;
+}
+
+/* CAMP */
+.camp-card{
+    border-left:6px solid #0096a6;
+}
+
+.date{
+    display:inline-block;
+    background:#e0f7fa;
+    color:#00717a;
+    padding:7px 12px;
+    border-radius:20px;
+    margin:8px 0;
+    font-weight:bold;
+}
+
+/* PROFILE */
+.profile-header{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    background:linear-gradient(135deg,#006d77,#0096a6);
+    color:white;
+    padding:25px;
+    border-radius:20px 20px 0 0;
+}
+
+.avatar{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    background:white;
+    color:#006d77;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:38px;
+}
+
+.profile-content{
+    background:white;
+    padding:25px;
+    border-radius:0 0 20px 20px;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.info-box{
+    background:#f3fafc;
+    padding:18px;
+    border-radius:12px;
+}
+
+.info-box strong{
+    display:block;
+    color:#006d77;
+    margin-bottom:5px;
+}
+
+/* CONSULTATION */
+.check-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.check{
+    background:#f3fafc;
+    padding:12px;
+    border-radius:9px;
+}
+
+/* REFERRAL */
+.referral{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.07);
+}
+
+.status{
+    padding:7px 12px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.pending{
+    background:#fff3cd;
+    color:#856404;
+}
+
+.referred{
+    background:#cfe8ff;
+    color:#075985;
+}
+
+.completed{
+    background:#d8f3dc;
+    color:#1b6b32;
+}
+
+/* NAVIGATION */
+.navigation{
+    display:flex;
+    justify-content:space-between;
+    margin:30px 0;
+    gap:15px;
+}
+
+.progress{
+    text-align:center;
+    margin:15px 0;
+    color:#607d8b;
+    font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+    margin-top:40px;
+    background:#17324d;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+footer strong{
+    color:#8de7ed;
+}
+
+/* MAP */
+.map{
+    height:250px;
+    background:
+        linear-gradient(30deg,transparent 45%,#c5d7dc 46%,#c5d7dc 48%,transparent 49%),
+        linear-gradient(-25deg,transparent 45%,#c5d7dc 46%,#c5d7dc 48%,transparent 49%),
+        #e7f4f7;
+    border-radius:18px;
+    position:relative;
+    overflow:hidden;
+}
+
+.pin{
+    position:absolute;
+    font-size:30px;
+}
+
+.pin1{top:35%;left:25%;}
+.pin2{top:55%;left:55%;}
+.pin3{top:25%;left:75%;}
+
+/* SUCCESS */
+.success{
+    text-align:center;
+    padding:45px;
+}
+
+.success-icon{
+    font-size:80px;
+    margin-bottom:15px;
+}
+
+/* RESPONSIVE */
+@media(max-width:750px){
+
+    header{
+        flex-direction:column;
+        gap:8px;
+        text-align:center;
+    }
+
+    .hero{
+        flex-direction:column;
+        padding:30px;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero-icon{
+        font-size:90px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-group.full{
+        grid-column:auto;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .check-list{
+        grid-template-columns:1fr;
+    }
+
+    .referral{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🦷 Dental Health <span>CARE CAMP</span></div>
+    <small>Project by Shivam kumar | B.Tech CSE</small>
+</header>
+
+<div class="container">
+
+<!-- ================= PAGE 1 ================= -->
+
+<section class="page active">
+
+    <div class="hero">
+
+        <div class="hero-text">
+
+            <h1>FREE DENTAL HEALTH CARE CAMP</h1>
+
+            <p>
+                Care that reaches every community.
+                Our Dental Health Care Camp provides
+                free dental screening, consultation,
+                awareness and referral services.
+            </p>
+
+            <button class="btn btn-primary"
+                    onclick="nextPage()">
+                Start Registration →
+            </button>
+
+        </div>
+
+        <div class="hero-icon">
+            🦷
+        </div>
+
+    </div>
+
+    <div class="stats">
+
+        <div class="stat">
+            <h2>08</h2>
+            <p>Camps Conducted</p>
+        </div>
+
+        <div class="stat">
+            <h2>246+</h2>
+            <p>Patients Served</p>
+        </div>
+
+        <div class="stat">
+            <h2>14</h2>
+            <p>Doctors</p>
+        </div>
+
+        <div class="stat">
+            <h2>39</h2>
+            <p>Active Referrals</p>
+        </div>
+
+    </div>
+
+    <div class="section-title">
+        <h2>How It Works</h2>
+        <p>Simple process for every patient</p>
+    </div>
+
+    <div class="card-grid">
+
+        <div class="card">
+            <div class="icon">📝</div>
+            <h3>1. Registration</h3>
+            <p>Register the patient and record basic information.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">👨‍⚕️</div>
+            <h3>2. Consultation</h3>
+            <p>Patient meets the available dental doctor.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🩺</div>
+            <h3>3. Treatment</h3>
+            <p>Doctor records diagnosis and treatment advice.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📋</div>
+            <h3>4. Follow-up</h3>
+            <p>Referral and follow-up information is maintained.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PAGE 2 ================= -->
+
+<section class="page">
+
+    <div class="section-title">
+        <h2>Patient Registration</h2>
+        <p>Enter patient information for the dental camp.</p>
+    </div>
+
+    <div class="form-box">
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Patient Name</label>
+                <input id="patientName"
+                       type="text"
+                       placeholder="Enter patient name">
+            </div>
+
+            <div class="form-group">
+                <label>Age</label>
+                <input type="number"
+                       placeholder="Enter age">
+            </div>
+
+            <div class="form-group">
+                <label>Gender</label>
+
+                <select>
+                    <option>Select Gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+
+            </div>
+
+            <div class="form-group">
+                <label>Mobile Number</label>
+
+                <input type="tel"
+                       placeholder="Enter mobile number">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Camp</label>
+
+                <select>
+
+                    <option>Community Dental Care Camp</option>
+                    <option>Free Medical Screening Camp</option>
+                    <option>Oral Health Awareness Camp</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Patient Type</label>
+
+                <select>
+
+                    <option>New Patient</option>
+                    <option>Existing Patient</option>
+                    <option>Follow-up Patient</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group full">
+
+                <label>Chief Complaint</label>
+
+                <textarea
+                    placeholder="Describe patient's dental problem..."></textarea>
+
+            </div>
+
+        </div>
+
+        <label style="margin-top:10px;">
+
+            <input type="checkbox"
+                   style="width:auto;margin-right:8px;">
+
+            I confirm that the information provided is correct.
+
+        </label>
+
+        <br>
+
+        <button class="btn btn-blue"
+                onclick="registerPatient()">
+
+            Register Patient
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PAGE 3 ================= -->
+
+<section class="page">
+
+    <div class="section-title">
+
+        <h2>Our Doctors</h2>
+
+        <p>
+            Meet the dental professionals available at the camp.
+        </p>
+
+    </div>
+
+    <div class="card-grid">
+
+        <div class="card doctor">
+
+            <div class="doctor-photo">👩‍⚕️</div>
+
+            <h3>Dr. Ananya Sharma</h3>
+
+            <div class="speciality">
+                Dental Surgeon
+            </div>
+
+            <p>
+                Specialization in general dentistry
+                and preventive dental care.
+            </p>
+
+        </div>
+
+
+        <div class="card doctor">
+
+            <div class="doctor-photo">👨‍⚕️</div>
+
+            <h3>Dr. Rajiv Mehta</h3>
+
+            <div class="speciality">
+                Oral Health Specialist
+            </div>
+
+            <p>
+                Experienced in oral screening
+                and dental diagnosis.
+            </p>
+
+        </div>
+
+
+        <div class="card doctor">
+
+            <div class="doctor-photo">👩‍⚕️</div>
+
+            <h3>Dr. Neha Kapoor</h3>
+
+            <div class="speciality">
+                Orthodontist
+            </div>
+
+            <p>
+                Specializes in teeth alignment
+                and orthodontic consultation.
+            </p>
+
+        </div>
+
+
+        <div class="card doctor">
+
+            <div class="doctor-photo">👩‍⚕️</div>
+
+            <h3>Dr. Priya Verma</h3>
+
+            <div class="speciality">
+                Dental Consultant
+            </div>
+
+            <p>
+                Focused on preventive care
+                and patient awareness.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PAGE 4 ================= -->
+
+<section class="page">
+
+    <div class="section-title">
+
+        <h2>Dental Health Camp Details</h2>
+
+        <p>
+            Upcoming and community health camps.
+        </p>
+
+    </div>
+
+    <div class="card-grid">
+
+        <div class="card camp-card">
+
+            <div class="icon">🦷</div>
+
+            <h3>Community Dental Care Camp</h3>
+
+            <span class="date">
+                28 September 2026
+            </span>
+
+            <p>
+                <b>Time:</b> 9:00 AM – 2:00 PM
+            </p>
+
+            <p>
+                <b>Venue:</b> LPU Community Centre
+            </p>
+
+            <br>
+
+            <button class="btn btn-green"
+                    onclick="showMessage('Dental camp selected successfully!')">
+
+                Select Camp
+
+            </button>
+
+        </div>
+
+
+        <div class="card camp-card">
+
+            <div class="icon">🏥</div>
+
+            <h3>Free Medical Screening Camp</h3>
+
+            <span class="date">
+                02 October 2026
+            </span>
+
+            <p>
+                General health screening
+                and consultation.
+            </p>
+
+            <br>
+
+            <button class="btn btn-green"
+                    onclick="showMessage('Medical camp selected!')">
+
+                View Camp
+
+            </button>
+
+        </div>
+
+
+        <div class="card camp-card">
+
+            <div class="icon">👁️</div>
+
+            <h3>Eye & Vision Care Camp</h3>
+
+            <span class="date">
+                10 October 2026
+            </span>
+
+            <p>
+                Basic eye check-up and
+                vision awareness.
+            </p>
+
+            <br>
+
+            <button class="btn btn-green"
+                    onclick="showMessage('Eye care camp selected!')">
+
+                View Camp
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <h3 style="margin-bottom:15px;">
+        Camp Location
+    </h3>
+
+    <div class="map">
+
+        <div class="pin pin1">📍</div>
+        <div class="pin pin2">📍</div>
+        <div class="pin pin3">📍</div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PAGE 5 ================= -->
+
+<section class="page">
+
+    <div class="section-title">
+
+        <h2>Patient Profile</h2>
+
+        <p>
+            Patient information and preliminary health record.
+        </p>
+
+    </div>
+
+    <div>
+
+        <div class="profile-header">
+
+            <div class="avatar">
+                👤
+            </div>
+
+            <div>
+
+                <h2 id="displayPatient">
+                    Rahul Mehta
+                </h2>
+
+                <p>
+                    Patient ID: HC-2026-0148
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-content">
+
+            <div class="info-grid">
+
+                <div class="info-box">
+                    <strong>Age</strong>
+                    42 Years
+                </div>
+
+                <div class="info-box">
+                    <strong>Gender</strong>
+                    Male
+                </div>
+
+                <div class="info-box">
+                    <strong>Camp</strong>
+                    Dental Care Camp
+                </div>
+
+                <div class="info-box">
+                    <strong>Blood Pressure</strong>
+                    124 / 82 mmHg
+                </div>
+
+                <div class="info-box">
+                    <strong>Blood Sugar</strong>
+                    96 mg/dL
+                </div>
+
+                <div class="info-box">
+                    <strong>Weight</strong>
+                    68 kg
+                </div>
+
+            </div>
+
+            <br>
+
+            <h3>Chief Complaint</h3>
+
+            <p style="margin-top:8px;">
+                Tooth sensitivity and mild gum discomfort.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PAGE 6 ================= -->
+
+<section class="page">
+
+    <div class="section-title">
+
+        <h2>Doctor Consultation</h2>
+
+        <p>
+            Record clinical observations and treatment advice.
+        </p>
+
+    </div>
+
+    <div class="form-box">
+
+        <div class="form-group">
+
+            <label>Select Doctor</label>
+
+            <select>
+
+                <option>Dr. Ananya Sharma</option>
+                <option>Dr. Rajiv Mehta</option>
+                <option>Dr. Neha Kapoor</option>
+                <option>Dr. Priya Verma</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Clinical Notes</label>
+
+            <textarea
+                placeholder="Enter clinical observations..."></textarea>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Diagnosis</label>
+
+            <textarea
+                placeholder="Enter diagnosis..."></textarea>
+
+        </div>
+
+
+        <h3 style="margin-bottom:15px;">
+            Recommended Medicines / Advice
+        </h3>
+
+        <div class="check-list">
+
+            <label class="check">
+                <input type="checkbox">
+                Oral hygiene instructions
+            </label>
+
+            <label class="check">
+                <input type="checkbox">
+                Toothpaste recommendation
+            </label>
+
+            <label class="check">
+                <input type="checkbox">
+                Dental cleaning advice
+            </label>
+
+            <label class="check">
+                <input type="checkbox">
+                Follow-up consultation
+            </label>
+
+        </div>
+
+        <br>
+
+        <div class="form-group">
+
+            <label>Follow-up Date</label>
+
+            <input type="date">
+
+        </div>
+
+        <button class="btn btn-blue"
+                onclick="showMessage('Consultation saved successfully!')">
+
+            Save Consultation
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PAGE 7 ================= -->
+
+<section class="page">
+
+    <div class="section-title">
+
+        <h2>Referral Tracker</h2>
+
+        <p>
+            Track patients who require further dental care.
+        </p>
+
+    </div>
+
+
+    <div class="referral">
+
+        <div>
+
+            <h3>Rahul Mehta</h3>
+
+            <p>
+                Referral: Dental cleaning and follow-up
+            </p>
+
+        </div>
+
+        <div>
+
+            <span class="status pending">
+                Pending
+            </span>
+
+            <button class="btn btn-blue"
+                    onclick="changeStatus(this)">
+
+                Refer
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="referral">
+
+        <div>
+
+            <h3>Priya Singh</h3>
+
+            <p>
+                Referral: Orthodontic consultation
+            </p>
+
+        </div>
+
+        <div>
+
+            <span class="status referred">
+                Referred
+            </span>
+
+            <button class="btn btn-green"
+                    onclick="changeStatus(this)">
+
+                Complete
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="referral">
+
+        <div>
+
+            <h3>Amit Kumar</h3>
+
+            <p>
+                Referral: General dental consultation
+            </p>
+
+        </div>
+
+        <div>
+
+            <span class="status completed">
+                Completed
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PAGE 8 ================= -->
+
+<section class="page">
+
+    <div class="section-title">
+
+        <h2>Final Follow-up Form</h2>
+
+        <p>
+            Complete the patient's camp record.
+        </p>
+
+    </div>
+
+    <div class="form-box">
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label>Patient Name</label>
+
+                <input
+                    type="text"
+                    value="Rahul Mehta">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Patient ID</label>
+
+                <input
+                    type="text"
+                    value="HC-2026-0148">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Follow-up Required?</label>
+
+                <select>
+
+                    <option>Yes</option>
+                    <option>No</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Follow-up Date</label>
+
+                <input type="date">
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label>Final Remarks</label>
+
+                <textarea
+                    placeholder="Enter final remarks..."></textarea>
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label>Patient Feedback</label>
+
+                <textarea
+                    placeholder="Enter patient feedback..."></textarea>
+
+            </div>
+
+        </div>
+
+
+        <label>
+
+            <input type="checkbox"
+                   style="width:auto;margin-right:8px;">
+
+            I confirm that the patient's record has been completed.
+
+        </label>
+
+        <br><br>
+
+        <button class="btn btn-green"
+                onclick="finishForm()">
+
+            Complete Patient Record ✓
+
+        </button>
+
+    </div>
+
+
+    <div id="successBox"
+         class="card success"
+         style="display:none;margin-top:25px;">
+
+        <div class="success-icon">✅</div>
+
+        <h2>Record Completed Successfully!</h2>
+
+        <p style="margin-top:10px;">
+            Dental Health Care Camp patient record
+            has been successfully completed.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- NAVIGATION -->
+
+<div class="progress">
+
+    <span id="pageNumber">
+        Page 1 of 8
+    </span>
+
+</div>
+
+
+<div class="navigation">
+
+    <button class="btn btn-secondary"
+            id="prevBtn"
+            onclick="previousPage()">
+
+        ← Previous
+
+    </button>
+
+
+    <button class="btn btn-primary"
+            id="nextBtn"
+            onclick="nextPage()">
+
+        Next →
+
+    </button>
+
+</div>
+
+</div>
+
+
+<footer>
+
+    <p>
+        © 2026 <strong>Dental Health Care Camp</strong>
+    </p>
+
+    <p style="margin-top:6px;">
+        Project Designed & Developed by
+        <strong>Shivam kumar</strong>
+    </p>
+
+</footer>
+
+
+<script>
+
+let currentPage = 0;
+
+const pages = document.querySelectorAll(".page");
+
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const pageNumber = document.getElementById("pageNumber");
+
+
+function showPage(index){
+
+    pages.forEach((page, i)=>{
+
+        page.classList.toggle(
+            "active",
+            i === index
+        );
+
+    });
+
+
+    pageNumber.innerText =
+        "Page " + (index + 1) + " of " + pages.length;
+
+
+    prevBtn.style.visibility =
+        index === 0 ? "hidden" : "visible";
+
+
+    nextBtn.style.visibility =
+        index === pages.length - 1 ? "hidden" : "visible";
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+function nextPage(){
+
+    if(currentPage < pages.length - 1){
+
+        currentPage++;
+
+        showPage(currentPage);
+
+    }
+
+}
+
+
+function previousPage(){
+
+    if(currentPage > 0){
+
+        currentPage--;
+
+        showPage(currentPage);
+
+    }
+
+}
+
+
+function registerPatient(){
+
+    const name =
+        document.getElementById("patientName").value;
+
+    if(name.trim() === ""){
+
+        alert("Please enter patient name.");
+
+        return;
+
+    }
+
+
+    document.getElementById("displayPatient")
+        .innerText = name;
+
+
+    showMessage(
+        "Patient registered successfully!"
+    );
+
+
+    setTimeout(()=>{
+
+        nextPage();
+
+    },700);
+
+}
+
+
+function showMessage(message){
+
+    alert(message);
+
+}
+
+
+function changeStatus(button){
+
+    const status =
+        button.parentElement.querySelector(".status");
+
+
+    if(status.classList.contains("pending")){
+
+        status.className =
+            "status referred";
+
+        status.innerText =
+            "Referred";
+
+        button.innerText =
+            "Complete";
+
+    }
+
+    else{
+
+        status.className =
+            "status completed";
+
+        status.innerText =
+            "Completed";
+
+        button.style.display =
+            "none";
+
+    }
+
+}
+
+
+function finishForm(){
+
+    document.getElementById("successBox")
+        .style.display = "block";
+
+
+    window.scrollTo({
+        top:document.body.scrollHeight,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* INITIAL PAGE */
+
+showPage(0);
+
+</script>
+
+</body>
+</html>
